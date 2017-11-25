@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl: 'http://question.usbix.com.mx/api'
+  apiUrl: 'https://question.usbix.com.mx/api'
 };

@@ -1525,7 +1525,7 @@ var QuestionService = (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return environment; });
 var environment = {
     production: true,
-    apiUrl: 'http://question.usbix.com.mx/api'
+    apiUrl: 'https://question.usbix.com.mx/api'
 };
 
 
