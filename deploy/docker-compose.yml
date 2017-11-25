@@ -2,12 +2,28 @@ version: "2"
 services:
   question-overflow:
     image: "node:8"
+    container_name: "question-overflow-app"
     user: "node"
     working_dir: /home/node/app
     volumes:
-      - /opt/question-overflow:/home/node/app
+      - /opt/question-overflow/question-overflow:/home/node/app
     ports:
       - "11000:3000"
     env_file:
       - ./env/production.env
-    command: "npm start-prod"
+    links:
+      - mongodb
+    depends_on:
+      - mongodb
+    command: "npm run start-prod"
+  mongodb:
+    image: mongo:latest
+    container_name: "mongodb"
+    environment:
+      - MONGO_DATA_DIR=/data/db
+      - MONGO_LOG_DIR=/dev/null
+    volumes:
+      - /opt/question-overflow/data:/data/db
+    ports:
+        - 27017:27017
+    command: mongod --smallfiles --logpath=/dev/null

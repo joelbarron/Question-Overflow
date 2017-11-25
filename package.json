@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start-dev": "concurrently -r \"npm run start-server\" \"npm run start-client\"",
+    "start": "concurrently -r \"npm run start-server\" \"npm run start-client\"",
     "start-server": "NODE_ENV=development DEBUG=question-overflow* nodemon server/index.js --exec babel-node",
     "start-client": "ng serve",
     "test": "ng test",
