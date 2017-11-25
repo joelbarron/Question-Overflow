@@ -6,7 +6,7 @@ services:
     user: "node"
     working_dir: /home/node/app
     volumes:
-      - /opt/question-overflow/question-overflow:/home/node/app
+      - /opt/question-overflow/source-code:/home/node/app
     ports:
       - "11000:3000"
     env_file:
