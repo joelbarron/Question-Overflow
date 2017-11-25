@@ -1,0 +1,13 @@
+version: "2"
+services:
+  question-overflow:
+    image: "node:8"
+    user: "node"
+    working_dir: /home/node/app
+    volumes:
+      - /opt/question-overflow:/home/node/app
+    ports:
+      - "11000:3000"
+    env_file:
+      - ./env/production.env
+    command: "npm start-prod"

@@ -1,0 +1,58 @@
+<!-- formulario SIN reactive forms -->
+<form (ngSubmit)="onSubmit(f)" #f="ngForm">
+  <mat-input-container>
+    <input
+      matInput
+      placeholder="Titulo"
+      name="title"
+      ngModel>
+  </mat-input-container>
+  <mat-input-container>
+    <textarea
+      matInput
+      placeholder="Descripcion"
+      name="description"
+      ngModel></textarea>
+  </mat-input-container>
+  <button type="submit" mat-raised-button color="accent">Enviar</button>
+
+  <mat-grid-list cols="3" rowHeight="3:2">
+    <mat-grid-tile>
+      <mat-radio-group [ngModel] name="icon">
+        <mat-radio-button value="none">
+          <i mat-list-icon class="material-icons">help</i>
+          <small>Sin icono</small>
+        </mat-radio-button>
+      </mat-radio-group>
+    </mat-grid-tile>
+    <mat-grid-tile *ngFor="let icon of icons">
+      <mat-radio-group [ngModel] name="icon">
+        <mat-radio-button [ngModel] value="devicon-{{ icon.name }}-{{ getIconVersion(icon) }}">
+          <i mat-list-icon class="devicon-{{ icon.name }}-{{ getIconVersion(icon) }}"></i>
+        </mat-radio-button>
+      </mat-radio-group>
+    </mat-grid-tile>
+  </mat-grid-list>
+
+
+</form>
+
+
+<!-- <md-grid-list cols="3" rowHeight="3:2">
+    <md-grid-tile>
+      <md-radio-group [ngModel] name="icon">
+        <md-radio-button value='none'>
+          <i md-list-icon class="material-icons">help</i>
+          <small>Sin ícono</small>
+        </md-radio-button>
+      </md-radio-group>
+    </md-grid-tile>
+
+    <md-grid-tile *ngFor="let icon of icons">
+      <md-radio-group [ngModel] name="icon">
+        <md-radio-button value="devicon-{{ icon.name }}-{{ getIconVersion(icon) }}">
+          <i md-list-icon class="devicon-{{ icon.name }}-{{ getIconVersion(icon) }}"></i>
+        </md-radio-button>
+      </md-radio-group>
+    </md-grid-tile>
+  </md-grid-list> -->
