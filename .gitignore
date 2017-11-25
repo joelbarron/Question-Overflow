@@ -1,7 +1,6 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
 # compiled output
-/dist
 /tmp
 /out-tsc
 
@@ -42,5 +41,4 @@ yarn-error.log
 .DS_Store
 Thumbs.db
 
-#own
 /deploy/env/production.env
